@@ -17,7 +17,7 @@ module.exports = {
                 for (let i = 0; i < res.length; i++) { // i를 0으로 설정 , res.length( 전체 res 개수) 보다 작으면 계속 실행 , 실행할때마다 i에 1을 더함
                     let searchuser = client.users.cache.get(res[i].userid) // 데이터베이스에 저장된 userid로 유저를 검색함
                     const user = searchuser || "Delete User" // user을 위에서 찾은 유저로 저장 || 유저를 못찾았다면 Delete User로 지정
-                    embed.addField(`${i + 1}등 ${user.tag || user}`, `${comma(res[i].money)}원`) //몰라요
+                    embed.addField(`${i + 1}등 ${user.tag || user}`, `${comma(res[i].money)}원`)
                 }
                 message.channel.send({ embeds: [embed] }) // 채널에 임베드를 전송
             })
